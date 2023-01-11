@@ -1,7 +1,7 @@
 <?php
   require('config/db.php');
 
-  $query = "SELECT * FROM posts";
+  $query = "SELECT * FROM posts ORDER BY created_at DESC";
 
   $result = mysqli_query($conn, $query);
 
@@ -12,17 +12,7 @@
   mysqli_close($conn);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PHP Post</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-</head>
-<body>
-  <div class="container">
+<?php include('inc/header.php'); ?>
     <h1 class="mt-4">Posts</h1>
     <?php foreach($posts as $post): ?>
     <div class="card mt-4">
@@ -34,6 +24,4 @@
       </div>
     </div>
     <?php endforeach; ?>
-  </div>
-</body>
-</html>
+<?php include('inc/footer.php'); ?>
