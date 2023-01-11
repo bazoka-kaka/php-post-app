@@ -1,4 +1,4 @@
-# php-post-app
+# PHP Post App
 
 Post app created using php and mysql
 
